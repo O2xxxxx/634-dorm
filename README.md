@@ -1,6 +1,6 @@
 # 634-dorm
 
-Live site: Coming soon
+网站已上线:https://o2xxxxx.github.io/634-dorm/
 
 ## Development
 
