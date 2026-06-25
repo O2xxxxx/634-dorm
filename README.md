@@ -4,7 +4,7 @@
 
 ## Development
 
-Open `index.html` in your browser to preview locally.
+浏览器打开预览634风采。
 
 ## Deployment
 
