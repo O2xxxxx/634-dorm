@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>634寝室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #FAF8F5;
+      --text: #2C2A28;
+      --muted: #8C8680;
+      --card-bg: #FFFFFF;
+      --accent: #C7A37A;
+      --line: #E8E4DF;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      min-height: 62vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 50px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px; height: 260px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px; height: 340px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
+    .dorm-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 16vw, 9rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+      color: var(--text);
+    }
+
+    .dorm-label {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1rem;
+      letter-spacing: 0.6em;
+      color: var(--muted);
+      margin-top: 14px;
+      padding-left: 0.6em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slogan {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--accent);
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .divider {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, var(--line), transparent);
+      margin: 40px auto 0;
+    }
+
+    /* ===== Gallery ===== */
+    .gallery-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.15em;
+    }
+
+    .section-title p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 8px;
+      letter-spacing: 0.1em;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 36px;
+    }
+
+    .photo-card {
+      background: var(--card-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.4s ease;
+    }
+
+    .photo-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .photo-wrapper {
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--line);
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: block;
+    }
+
+    .photo-card:hover .photo-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .caption {
+      padding: 16px 20px 20px;
+    }
+
+    .caption-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .caption-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 40px 20px 50px;
+      border-top: 1px solid var(--line);
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer .heart {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero { min-height: 50vh; padding: 60px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="dorm-number">634</div>
+    <div class="dorm-label">寝 室</div>
+    <div class="slogan">We are family</div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== Photo Gallery ===== -->
+  <section class="gallery-section">
+    <div class="section-title">
+      <h2>我 们 的 故 事</h2>
+      <p>— 那些闪闪发光的日子 —</p>
+    </div>
+
+    <div class="photo-grid">
+      <!-- 照片1 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634a/400/300" alt="第一次聚餐" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">第一次聚餐</div>
+          <div class="caption-date">2024.09</div>
+        </div>
+      </div>
+
+      <!-- 照片2 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634b/400/300" alt="期末复习" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">期末复习</div>
+          <div class="caption-date">2025.01</div>
+        </div>
+      </div>
+
+      <!-- 照片3 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634c/400/300" alt="生日快乐" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">生日快乐</div>
+          <div class="caption-date">2025.03</div>
+        </div>
+      </div>
+
+      <!-- 照片4 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634d/400/300" alt="春游踏青" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">春游踏青</div>
+          <div class="caption-date">2025.04</div>
+        </div>
+      </div>
+
+      <!-- 照片5 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634e/400/300" alt="深夜卧谈" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">深夜卧谈</div>
+          <div class="caption-date">2025.05</div>
+        </div>
+      </div>
+
+      <!-- 照片6 -->
+      <div class="photo-card">
+        <div class="photo-wrapper">
+          <img src="https://picsum.photos/seed/634f/400/300" alt="毕业合影" loading="lazy">
+        </div>
+        <div class="caption">
+          <div class="caption-title">毕业合影</div>
+          <div class="caption-date">2025.06</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>634 &middot; <span class="heart">&#10084;</span> &middot; Forever Young</p>
+  </footer>
+
+</body>
+</html>
