@@ -1,482 +1,507 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>634寝室</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>634寝室</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    :root {
-      --bg: #FAF8F5;
-      --text: #2C2A28;
-      --muted: #8C8680;
-      --card-bg: #FFFFFF;
-      --accent: #C7A37A;
-      --line: #E8E4DF;
-    }
+      :root {
+        --bg: #faf8f5;
+        --text: #2c2a28;
+        --muted: #8c8680;
+        --card-bg: #ffffff;
+        --accent: #c7a37a;
+        --line: #e8e4df;
+      }
 
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: 'Noto Sans SC', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+      body {
+        font-family: 'Noto Sans SC', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-    /* ===== Hero ===== */
-    .hero {
-      min-height: 62vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px 50px;
-      position: relative;
-    }
+      /* ===== Hero ===== */
+      .hero {
+        min-height: 62vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 20px 50px;
+        position: relative;
+      }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 260px; height: 260px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      opacity: 0.5;
-    }
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 260px;
+        height: 260px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        opacity: 0.5;
+      }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 340px; height: 340px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      opacity: 0.3;
-    }
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 340px;
+        height: 340px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        opacity: 0.3;
+      }
 
-    .dorm-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(5rem, 16vw, 9rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      line-height: 1;
-      position: relative;
-      z-index: 1;
-      color: var(--text);
-    }
+      .dorm-number {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(5rem, 16vw, 9rem);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        position: relative;
+        z-index: 1;
+        color: var(--text);
+      }
 
-    .dorm-label {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1rem;
-      letter-spacing: 0.6em;
-      color: var(--muted);
-      margin-top: 14px;
-      padding-left: 0.6em;
-      position: relative;
-      z-index: 1;
-    }
+      .dorm-label {
+        font-family: 'Noto Serif SC', serif;
+        font-size: 1rem;
+        letter-spacing: 0.6em;
+        color: var(--muted);
+        margin-top: 14px;
+        padding-left: 0.6em;
+        position: relative;
+        z-index: 1;
+      }
 
-    .slogan {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      color: var(--accent);
-      margin-top: 28px;
-      position: relative;
-      z-index: 1;
-    }
+      .slogan {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        color: var(--accent);
+        margin-top: 28px;
+        position: relative;
+        z-index: 1;
+      }
 
-    .divider {
-      width: 1px;
-      height: 50px;
-      background: linear-gradient(to bottom, transparent, var(--line), transparent);
-      margin: 40px auto 0;
-    }
+      .divider {
+        width: 1px;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, var(--line), transparent);
+        margin: 40px auto 0;
+      }
 
-    /* ===== Video ===== */
-    .video-section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 24px 20px;
-    }
+      /* ===== Video ===== */
+      .video-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 24px 20px;
+      }
 
-    .video-section .section-title {
-      text-align: center;
-      margin-bottom: 32px;
-    }
+      .video-section .section-title {
+        text-align: center;
+        margin-bottom: 32px;
+      }
 
-    .video-section .section-title h2 {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--text);
-      letter-spacing: 0.15em;
-    }
+      .video-section .section-title h2 {
+        font-family: 'Noto Serif SC', serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: 0.15em;
+      }
 
-    .video-wrapper {
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      background: var(--card-bg);
-    }
+      .video-wrapper {
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        background: var(--card-bg);
+      }
 
-    .video-wrapper video {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+      .video-wrapper video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
 
-    /* ===== Gallery ===== */
-    .gallery-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 24px 80px;
-    }
+      /* ===== Gallery ===== */
+      .gallery-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px 24px 80px;
+      }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-    .section-title h2 {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--text);
-      letter-spacing: 0.15em;
-    }
+      .section-title h2 {
+        font-family: 'Noto Serif SC', serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: 0.15em;
+      }
 
-    .section-title p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 8px;
-      letter-spacing: 0.1em;
-    }
+      .section-title p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 8px;
+        letter-spacing: 0.1em;
+      }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 36px;
-    }
-
-    .photo-card {
-      background: var(--card-bg);
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: box-shadow 0.4s ease;
-    }
-
-    .photo-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-
-    .photo-wrapper {
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: var(--line);
-    }
-
-    .photo-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      display: block;
-    }
-
-    .photo-card:hover .photo-wrapper img {
-      transform: scale(1.08);
-    }
-
-    .caption {
-      padding: 16px 20px 20px;
-    }
-
-    .caption-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .caption-date {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      text-align: center;
-      padding: 40px 20px 50px;
-      border-top: 1px solid var(--line);
-    }
-
-    footer p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    footer .heart {
-      color: var(--accent);
-      font-style: normal;
-    }
-
-    /* ===== Lightbox ===== */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0);
-      backdrop-filter: blur(0px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s ease, background 0.35s ease, backdrop-filter 0.35s ease;
-    }
-
-    .lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
-      background: rgba(20,18,16,0.82);
-      backdrop-filter: blur(8px);
-    }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 82vh;
-      border-radius: 6px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      transform: scale(0.92);
-      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .lightbox.open img {
-      transform: scale(1);
-    }
-
-    .lightbox-caption {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.85);
-      font-family: 'Noto Serif SC', serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      opacity: 0;
-      transition: opacity 0.3s ease 0.1s;
-    }
-
-    .lightbox.open .lightbox-caption {
-      opacity: 1;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 28px;
-      width: 40px;
-      height: 40px;
-      border: none;
-      background: none;
-      color: rgba(255,255,255,0.6);
-      font-size: 1.8rem;
-      cursor: pointer;
-      line-height: 1;
-      transition: color 0.2s ease, transform 0.2s ease;
-    }
-
-    .lightbox-close:hover {
-      color: #fff;
-      transform: rotate(90deg);
-    }
-
-    .photo-wrapper {
-      cursor: zoom-in;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
       .photo-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 36px;
       }
-      .hero { min-height: 50vh; padding: 60px 20px 40px; }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero">
-    <div class="dorm-number">634</div>
-    <div class="dorm-label">寝 室</div>
-    <div class="slogan">We are family</div>
-  </section>
+      .photo-card {
+        background: var(--card-bg);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        transition: box-shadow 0.4s ease;
+      }
 
-  <div class="divider"></div>
+      .photo-card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
 
-  <!-- ===== Video ===== -->
-  <section class="video-section">
-    <div class="section-title">
-      <h2>我 们 的 影 片</h2>
+      .photo-wrapper {
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        background: var(--line);
+      }
+
+      .photo-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        display: block;
+      }
+
+      .photo-card:hover .photo-wrapper img {
+        transform: scale(1.08);
+      }
+
+      .caption {
+        padding: 16px 20px 20px;
+      }
+
+      .caption-title {
+        font-family: 'Noto Serif SC', serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .caption-date {
+        font-size: 0.78rem;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        text-align: center;
+        padding: 40px 20px 50px;
+        border-top: 1px solid var(--line);
+      }
+
+      footer p {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      footer .heart {
+        color: var(--accent);
+        font-style: normal;
+      }
+
+      /* ===== Lightbox ===== */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0);
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.35s ease,
+          background 0.35s ease,
+          -webkit-backdrop-filter 0.35s ease,
+          backdrop-filter 0.35s ease;
+      }
+
+      .lightbox.open {
+        opacity: 1;
+        pointer-events: auto;
+        background: rgba(20, 18, 16, 0.82);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+      }
+
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 82vh;
+        border-radius: 6px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        transform: scale(0.92);
+        transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .lightbox.open img {
+        transform: scale(1);
+      }
+
+      .lightbox-caption {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.85);
+        font-family: 'Noto Serif SC', serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        opacity: 0;
+        transition: opacity 0.3s ease 0.1s;
+      }
+
+      .lightbox.open .lightbox-caption {
+        opacity: 1;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 28px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: none;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.8rem;
+        cursor: pointer;
+        line-height: 1;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .lightbox-close:hover {
+        color: #fff;
+        transform: rotate(90deg);
+      }
+
+      .photo-wrapper {
+        cursor: zoom-in;
+      }
+
+      /* ===== Responsive ===== */
+      @media (max-width: 600px) {
+        .photo-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .hero {
+          min-height: 50vh;
+          padding: 60px 20px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="dorm-number">634</div>
+      <div class="dorm-label">寝 室</div>
+      <div class="slogan">We are family</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== Video ===== -->
+    <section class="video-section">
+      <div class="section-title">
+        <h2>我 们 的 影 片</h2>
+      </div>
+      <div class="video-wrapper">
+        <video
+          src="IMG_1532..mp4"
+          controls
+          playsinline
+          poster="6fd010e14f083dd730cdf0dc454006d8_720.png"
+        >
+          您的浏览器不支持视频播放
+        </video>
+      </div>
+    </section>
+
+    <!-- ===== Photo Gallery ===== -->
+    <section class="gallery-section">
+      <div class="section-title">
+        <h2>我 们 的 故 事</h2>
+        <p>— 那些闪闪发光的日子 —</p>
+      </div>
+
+      <div class="photo-grid">
+        <!-- 照片1 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="2913394197CD617D42D0FC39E10E7739..png" alt="粪成20碎" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">粪成20岁</div>
+            <div class="caption-date">2025.11.24</div>
+          </div>
+        </div>
+
+        <!-- 照片2 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="34A028A1B61F2D3434766E654BEE5D8F..png" alt="阆中父子行" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">阆中父子行</div>
+            <div class="caption-date">2025.05.30</div>
+          </div>
+        </div>
+
+        <!-- 照片3 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="4aaf6880bb479de22bbb4c22cf5d4d12.png" alt="瑞哥20碎" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">瑞哥20碎</div>
+            <div class="caption-date">2025.11.24</div>
+          </div>
+        </div>
+
+        <!-- 照片4 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="BE525BEEDA30580F25C8B5DB05942A67..png" alt="小丑🤡" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">小丑🤡</div>
+            <div class="caption-date">2025.03.24</div>
+          </div>
+        </div>
+
+        <!-- 照片5 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="IMG_1529(20260626-201925)..JPG" alt="红脸right" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">红脸right</div>
+            <div class="caption-date">2025.06.26</div>
+          </div>
+        </div>
+
+        <!-- 照片6 -->
+        <div class="photo-card">
+          <div class="photo-wrapper">
+            <img src="E6947CE4A54DC5FBE397A9E80F0898F9..png" alt="帅比双子星" loading="lazy" />
+          </div>
+          <div class="caption">
+            <div class="caption-title">帅比双子星</div>
+            <div class="caption-date">2024.11.26</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <p>634 &middot; <span class="heart">&#10084;</span> &middot; Forever Young</p>
+    </footer>
+
+    <!-- ===== Lightbox ===== -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-    <div class="video-wrapper">
-      <video src="IMG_6251..mp4" controls playsinline poster="E6947CE4A54DC5FBE397A9E80F0898F9..png">
-        您的浏览器不支持视频播放
-      </video>
-    </div>
-  </section>
 
-  <!-- ===== Photo Gallery ===== -->
-  <section class="gallery-section">
-    <div class="section-title">
-      <h2>我 们 的 故 事</h2>
-      <p>— 那些闪闪发光的日子 —</p>
-    </div>
+    <script>
+      (function () {
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightboxImg');
+        var lbCaption = document.getElementById('lightboxCaption');
+        var lbClose = document.getElementById('lightboxClose');
 
-    <div class="photo-grid">
-      <!-- 照片1 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="2913394197CD617D42D0FC39E10E7739..png" alt="粪成20碎" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">粪成20岁</div>
-          <div class="caption-date">2025.11.24</div>
-        </div>
-      </div>
+        var cards = document.querySelectorAll('.photo-card');
+        cards.forEach(function (card) {
+          var img = card.querySelector('img');
+          var title = card.querySelector('.caption-title').textContent;
+          var wrapper = card.querySelector('.photo-wrapper');
 
-      <!-- 照片2 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="34A028A1B61F2D3434766E654BEE5D8F..png" alt="阆中父子行" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">阆中父子行</div>
-          <div class="caption-date">2025.05.30</div>
-        </div>
-      </div>
-
-      <!-- 照片3 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="4FE7A3D1A0F24C62C73C8CE671DDFEC9..png" alt="生日快乐" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">生日快乐</div>
-          <div class="caption-date">2025.11.24</div>
-        </div>
-      </div>
-
-      <!-- 照片4 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="BE525BEEDA30580F25C8B5DB05942A67..png" alt="小丑🤡" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">小丑🤡</div>
-          <div class="caption-date">2025.03.24</div>
-        </div>
-      </div>
-
-      <!-- 照片5 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="DD9DBE9BA13A01F8B6C37F9EEDF076FD..png" alt="深夜卧谈" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">深夜卧谈</div>
-          <div class="caption-date">2025.05</div>
-        </div>
-      </div>
-
-      <!-- 照片6 -->
-      <div class="photo-card">
-        <div class="photo-wrapper">
-          <img src="E6947CE4A54DC5FBE397A9E80F0898F9..png" alt="帅比双子星" loading="lazy">
-        </div>
-        <div class="caption">
-          <div class="caption-title">帅比双子星</div>
-          <div class="caption-date">2024.11.26</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer>
-    <p>634 &middot; <span class="heart">&#10084;</span> &middot; Forever Young</p>
-  </footer>
-
-  <!-- ===== Lightbox ===== -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">&times;</button>
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-  </div>
-
-  <script>
-    (function() {
-      var lb = document.getElementById('lightbox');
-      var lbImg = document.getElementById('lightboxImg');
-      var lbCaption = document.getElementById('lightboxCaption');
-      var lbClose = document.getElementById('lightboxClose');
-
-      var cards = document.querySelectorAll('.photo-card');
-      cards.forEach(function(card) {
-        var img = card.querySelector('img');
-        var title = card.querySelector('.caption-title').textContent;
-        var wrapper = card.querySelector('.photo-wrapper');
-
-        wrapper.addEventListener('dblclick', function() {
-          lbImg.src = img.src;
-          lbCaption.textContent = title;
-          lb.classList.add('open');
-          document.body.style.overflow = 'hidden';
+          wrapper.addEventListener('dblclick', function () {
+            lbImg.src = img.src;
+            lbCaption.textContent = title;
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          });
         });
-      });
 
-      function close() {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
-        setTimeout(function() { lbImg.src = ''; }, 350);
-      }
+        function close() {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+          setTimeout(function () {
+            lbImg.src = '';
+          }, 350);
+        }
 
-      lb.addEventListener('click', function(e) {
-        if (e.target !== lbImg) close();
-      });
+        lb.addEventListener('click', function (e) {
+          if (e.target !== lbImg) close();
+        });
 
-      lbClose.addEventListener('click', close);
+        lbClose.addEventListener('click', close);
 
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') close();
-      });
-    })();
-  </script>
-
-</body>
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') close();
+        });
+      })();
+    </script>
+  </body>
 </html>
