@@ -1,6 +1,6 @@
 # 634寝室
 
-网站已上线:https://o2xxxxx.github.io/634-dorm/
+小网页已上线:https://o2xxxxx.github.io/634-dorm/
 
 ## Development
 
